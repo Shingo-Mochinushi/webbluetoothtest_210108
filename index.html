@@ -21,7 +21,7 @@
         return device.gatt.connect();
       })
       .then(server=>{
-        console.log("server",server);
+        alert(server);
         server.getPrimaryService(UUID_TEMPERATURE_SERVICE)
         .then(service=>{
           service.getCharacteristic(UUID_TEMPERATURE_SERVICE_CHARACTERISTIC_PERIOD)
