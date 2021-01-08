@@ -32,9 +32,10 @@
             console.log(error);
             alert("取得間隔設定に失敗");
           })
-          alert("hello");
           service.getCharacteristic(UUID_TEMPERATURE_SERVICE_CHARACTERISTIC_DATA)
           .then(characteristic=>{
+            alert("hello");
+
             characteristic.startNotifications()
             .then(char=>{
               alert("接続成功");
