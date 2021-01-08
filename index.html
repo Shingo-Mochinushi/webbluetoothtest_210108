@@ -21,7 +21,7 @@
         return device.gatt.connect();
       })
       .then(server=>{
-        alert(server);
+        console.log("server",server);
         server.getPrimaryService(UUID_TEMPERATURE_SERVICE)
         .then(service=>{
           service.getCharacteristic(UUID_TEMPERATURE_SERVICE_CHARACTERISTIC_PERIOD)
@@ -32,6 +32,7 @@
             console.log(error);
             alert("取得間隔設定に失敗");
           })
+          alert("hello");
           service.getCharacteristic(UUID_TEMPERATURE_SERVICE_CHARACTERISTIC_DATA)
           .then(characteristic=>{
             characteristic.startNotifications()
